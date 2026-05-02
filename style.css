@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+}
+
+.header__left,
+.header__middle,
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header {
+  position: relative;
+}
+
+h1 {
+  border-left: 4px solid aqua;
+  padding-left: 16px;
+  border-radius: 0 4px 4px 0;
+}
+
+.btn {
+  display: flex;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  padding: 0;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto;
+  list-style: none;
+  padding: 8px;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.nav__item a {
+  text-decoration: none;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 8px 12px;
+  min-width: max-content;
+}
+
+.nav__item--active a {
+  border: solid 2px #41f6d7;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header__middle {
+  display: none;
+  gap: 16px;
+}
+
+.content {
+  margin-top: 16px;
+}
+.content__text {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.content__paragraph--hidden {
+  margin-top: 16px;
+}
+.content__text--hidden {
+  display: none;
+}
+
+.content__image {
+  margin-top: 8px;
+}
+
+.read-more {
+  text-decoration: none;
+}
+.img__text {
+  display: none;
+}
+
+.image {
+  display: block;
+}
+.header__repair-text,
+.header__status-text {
+  display: none;
+}
+@media (min-width: 769px) {
+  .header__middle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .content__text--hidden {
+    display: flex;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  .content__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .image {
+    flex: 1;
+  }
+  .img__text {
+    display: none;
+  }
+
+  .header__left::after {
+    display: none;
+  }
+
+  .header__left {
+    position: relative;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1120px) {
+  .header__middle {
+    display: none;
+  }
+  .img__text {
+    display: flex;
+    margin-right: 16px;
+  }
+  .header__left--burger::after {
+    display: none;
+  }
+
+  .header__repair-text,
+  .header__status-text {
+    display: flex;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
