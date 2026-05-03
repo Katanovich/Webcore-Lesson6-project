@@ -71,6 +71,7 @@ h1 {
   white-space: nowrap;
   padding: 8px 12px;
   min-width: max-content;
+  color: black;
 }
 
 .nav__item--active a {
@@ -86,11 +87,18 @@ h1 {
 
 .content {
   margin-top: 16px;
+  display: flex;
+  flex-direction: column;
 }
 .content__text {
   padding-right: 16px;
   padding-left: 16px;
 }
+
+.content__read-more {
+  margin-top: 8px;
+}
+
 .content__paragraph--hidden {
   margin-top: 16px;
 }
@@ -98,20 +106,17 @@ h1 {
   display: none;
 }
 
-.content__image {
-  margin-top: 8px;
-}
-
-.read-more {
-  text-decoration: none;
-}
-.img__text {
-  display: none;
-}
-
-.image {
+.content__background-img {
   display: block;
+  background-image: url("./assets/img/cps-pic.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: auto;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fff;
 }
+
 .header__repair-text,
 .header__status-text {
   display: none;
@@ -119,6 +124,7 @@ h1 {
 @media (min-width: 769px) {
   .header__middle {
     display: flex;
+
     margin-left: auto;
   }
 
@@ -128,19 +134,20 @@ h1 {
 
   .content {
     display: flex;
+    min-height: 100vh;
     flex-direction: row;
-    gap: 24px;
+    gap: 16px;
   }
   .content__text {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-  .image {
+
+  .content__background-img {
+    display: block;
     flex: 1;
-  }
-  .img__text {
-    display: none;
+    height: auto;
   }
 
   .header__left::after {
@@ -172,6 +179,19 @@ h1 {
   .content {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    min-height: 100vh;
+    gap: 16px;
+  }
+
+  .content__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .content__background-img {
+    display: block;
+    flex: 1;
+    height: auto;
   }
 }
